@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PieceFabric;
 
 namespace ChessWPF1
 {
@@ -20,9 +21,18 @@ namespace ChessWPF1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Piece[,] board;
+        public PieceMaker pieceMaker;
+
         public MainWindow()
         {
             InitializeComponent();
+            board = new Piece[8, 8];
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
