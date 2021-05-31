@@ -8,5 +8,7 @@ namespace Chess
 {
     class Class1
     {
+        public static void Main()
+        { }
     }
 }

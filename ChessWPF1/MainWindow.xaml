@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChessWPF1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="965.358" Width="880.667">
+        Title="MainWindow" Height="1008.858" Width="907.667">
     <Window.Resources>
         <Style x:Key="Button">
             <Setter Property="ItemsControl.Width" Value="80"/>
             <Setter Property="ItemsControl.Height" Value="80"/>
             <Setter Property="ItemsControl.HorizontalAlignment" Value="Center"/>
             <Setter Property="ItemsControl.VerticalAlignment" Value="Center"/>
+            <Setter Property="TextElement.Foreground" Value="Gray"/>
         </Style>
 
         <Style x:Key="BlackButton" BasedOn="{StaticResource Button}">
@@ -22,7 +23,7 @@
             <Setter Property="ItemsControl.Background" Value="White"/>
         </Style>
     </Window.Resources>
-    <Grid HorizontalAlignment="Left" Width="640" Margin="121,48,0,246">
+    <Grid HorizontalAlignment="Left" Width="640" Height="640" Margin="121,48,0,246">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -45,70 +46,81 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="0" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="1" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="2" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="3" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="4" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="5" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="6" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="7" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="0" Grid.Column="3" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="1" Grid.Column="3" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="2" Grid.Column="3" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="3" Grid.Column="3" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="4" Grid.Column="3" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="5" Grid.Column="3" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="6" Grid.Column="3" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="7" Grid.Column="3" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="0" Grid.Column="4" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="1" Grid.Column="4" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="2" Grid.Column="4" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="3" Grid.Column="4" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="4" Grid.Column="4" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="5" Grid.Column="4" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="6" Grid.Column="4" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="7" Grid.Column="4" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="0" Grid.Column="5" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="1" Grid.Column="5" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="2" Grid.Column="5" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="3" Grid.Column="5" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="4" Grid.Column="5" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="5" Grid.Column="5" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="6" Grid.Column="5" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="7" Grid.Column="5" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Column="7" Grid.Row="6" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Column="7" Grid.Row="2" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="3" Grid.Column="7" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="7" Grid.Column="7" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Column="7" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="1" Grid.Column="7" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="4" Grid.Column="7" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="5" Grid.Column="7" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="0" Grid.Column="1" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="1" Grid.Column="1" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="2" Grid.Column="1" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="3" Grid.Column="1" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="4" Grid.Column="1" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="5" Grid.Column="1" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="6" Grid.Column="1" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="7" Grid.Column="1" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="0" Grid.Column="2" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="1" Grid.Column="2" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="2" Grid.Column="2" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="3" Grid.Column="2" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="4" Grid.Column="2" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="5" Grid.Column="2" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="6" Grid.Column="2" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="7" Grid.Column="2" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="0" Grid.Column="6" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="1" Grid.Column="6" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="2" Grid.Column="6" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="3" Grid.Column="6" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="4" Grid.Column="6" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="5" Grid.Column="6" />
-        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="6" Grid.Column="6" />
-        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="7" Grid.Column="6" />
-
+        <Button x:Name="btn00" Style="{StaticResource WhiteButton}" Content="" Grid.Row="0" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="1" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="2" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="3" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="4" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="5" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="6" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="7" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="0" Grid.Column="3" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="1" Grid.Column="3" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="2" Grid.Column="3" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="3" Grid.Column="3" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="4" Grid.Column="3" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="5" Grid.Column="3" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="6" Grid.Column="3" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="7" Grid.Column="3" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="0" Grid.Column="4" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="1" Grid.Column="4" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="2" Grid.Column="4" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="3" Grid.Column="4" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="4" Grid.Column="4" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="5" Grid.Column="4" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="6" Grid.Column="4" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="7" Grid.Column="4" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="0" Grid.Column="5" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="1" Grid.Column="5" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="2" Grid.Column="5" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="3" Grid.Column="5" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="4" Grid.Column="5" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="5" Grid.Column="5" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="6" Grid.Column="5" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="7" Grid.Column="5" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Column="7" Grid.Row="6" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Column="7" Grid.Row="2" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="3" Grid.Column="7" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="7" Grid.Column="7" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Column="7" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="1" Grid.Column="7" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="4" Grid.Column="7" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="5" Grid.Column="7" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="0" Grid.Column="1" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="1" Grid.Column="1" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="2" Grid.Column="1" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="3" Grid.Column="1" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="4" Grid.Column="1" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="5" Grid.Column="1" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="6" Grid.Column="1" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="7" Grid.Column="1" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="0" Grid.Column="2" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="1" Grid.Column="2" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="2" Grid.Column="2" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="3" Grid.Column="2" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="4" Grid.Column="2" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="5" Grid.Column="2" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="6" Grid.Column="2" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="7" Grid.Column="2" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="0" Grid.Column="6" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="1" Grid.Column="6" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="2" Grid.Column="6" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="3" Grid.Column="6" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="4" Grid.Column="6" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="5" Grid.Column="6" Click="Button_Click" />
+        <Button Style="{StaticResource WhiteButton}" Content="" Grid.Row="6" Grid.Column="6" Click="Button_Click" />
+        <Button Style="{StaticResource BlackButton}" Content="" Grid.Row="7" Grid.Column="6" Click="Button_Click" />
+        <ListBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="88" Margin="0,161,0,-169" Grid.Row="7" VerticalAlignment="Top" Width="182" FontSize="18">
+            <ListBoxItem Content="King"></ListBoxItem>
+            <ListBoxItem Content="Knight"></ListBoxItem>
+            <ListBoxItem Content="Queen"></ListBoxItem>
+            <ListBoxItem Content="Bishop"></ListBoxItem>
+            <ListBoxItem Content="Rook"></ListBoxItem>
+        </ListBox>
+        <Label Content="X" Grid.Column="3" HorizontalAlignment="Left" Height="38" Margin="40,134,0,-92" Grid.Row="7" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="114"/>
+        <TextBox Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Height="24" Margin="15,196,0,-140" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Y" Grid.Column="5" HorizontalAlignment="Left" Height="38" Margin="21,134,0,-92" Grid.Row="7" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="114"/>
+        <TextBox Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="24" Margin="69,196,0,-140" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Grid.ColumnSpan="2" Content="Place" Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="8,231,0,-196" Grid.Row="7" VerticalAlignment="Top" Width="106"/>
     </Grid>
 </Window>
