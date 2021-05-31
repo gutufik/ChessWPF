@@ -79,6 +79,10 @@ namespace PieceFabric
             || Math.Abs(this.x - x) == Math.Abs(this.y - y)
             && Math.Abs(this.y - y) == 1);
         }
+        public override string ToString()
+        {
+            return "King";
+        }
     }
 
     public class Bishop : Piece
@@ -91,49 +95,84 @@ namespace PieceFabric
         }
     }
 
-    public abstract class PieceMaker
+    public class PiecesData
     {
-        public abstract Piece Make(int x, int y);
+        public string Name;
+        public Dictionary<string, int> Data;
 
-    }
-
-    public class BishopMaker : PieceMaker
-    {
-        public override Piece Make(int x, int y)
+        public override string ToString()
         {
-            return new Bishop(x, y);
+            return Name;
         }
     }
 
-    public class RookMaker : PieceMaker
+    static public class PieceFab
     {
-        public override Piece Make(int x, int y)
+        public static Piece Make(PiecesData figData)
         {
-            return new Rook(x, y);
-        }
-    }
+            Piece piece = null;
 
-    public class KnightMaker : PieceMaker
-    {
-        public override Piece Make(int x, int y)
-        {
-            return new Knight(x, y);
-        }
-    }
+            switch (figData.Name)
+            {
+                case "King":
+                    piece = new King(figData.Data["X"], figData.Data["Y"]);
+                    break;
+                case "Knight":
+                    piece = new Knight(figData.Data["X"], figData.Data["Y"]);
+                    break;
+                case "Rook":
+                    piece = new Rook(figData.Data["X"], figData.Data["Y"]);
+                    break;
+                case "Bishop":
+                    piece = new Bishop(figData.Data["X"], figData.Data["Y"]);
+                    break;
+                case "Queen":
+                    piece = new Queen(figData.Data["X"], figData.Data["Y"]);
+                    break;
+            }
 
-    public class QueenMaker : PieceMaker
-    {
-        public override Piece Make(int x, int y)
-        {
-            return new Knight(x, y);
+            return piece;
         }
-    }
 
-    public class KingMaker : PieceMaker
-    {
-        public override Piece Make(int x, int y)
+        public static List<PiecesData> InitFiguresData()
         {
-            return new King(x, y);
+            var figuresData = new List<PiecesData>();
+
+            figuresData.Add(new PiecesData
+            {
+                Name = "Circle",
+                Data = new Dictionary<string, int>
+                {
+                    { "X", 1 },
+                    { "Y", 1 },
+                }
+            });
+
+            figuresData.Add(new PiecesData
+            {
+                Name = "Line",
+                Data = new Dictionary<string, int>
+                {
+                    { "X", 0 },
+                    { "Y", 0 },
+                    { "X", 100 },
+                    { "Y", 100 }
+                }
+            });
+
+            figuresData.Add(new PiecesData
+            {
+                Name = "Rectangle",
+                Data = new Dictionary<string, int>
+                {
+                    { "X", 0 },
+                    { "Y", 0 },
+                    { "Height", 100 },
+                    { "Weight", 100 }
+                }
+            });
+
+            return figuresData;
         }
     }
 }
