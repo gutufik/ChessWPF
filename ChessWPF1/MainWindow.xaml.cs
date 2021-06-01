@@ -89,6 +89,11 @@ namespace ChessWPF1
             board[piecesData.Data["X"], piecesData.Data["Y"]] = PieceFab.Make(piecesData);
             buttons[piecesData.Data["X"], piecesData.Data["Y"]].Content = piecesData.Name;
         }
-        
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            board[int.Parse(tbDelX.Text), int.Parse(tbDelY.Text)] = null;
+            buttons[int.Parse(tbDelX.Text), int.Parse(tbDelY.Text)].Content = "";
+        }
     }
 }
