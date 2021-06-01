@@ -24,26 +24,55 @@ namespace ChessWPF1
         public Piece[,] board;
         public PiecesData piecesData;
         public Piece curPiece;
+        public Button[,] buttons;
 
 
         public MainWindow()
         {
             InitializeComponent();
             board = new Piece[8, 8];
+            buttons = new Button[8, 8];
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    buttons[i, j] = new Button();
+                    buttons[i, j].Width = 80;
+                    buttons[i, j].Height = 80;
+                    buttons[i, j].Click += Button_Click;
+                    buttons[i, j].Background = (i + j) % 2 == 0 ? Brushes.White : Brushes.Black;
+                    BaseGrid.Children.Add(buttons[i, j]);
+                    Grid.SetRow(buttons[i, j], i);
+                    Grid.SetColumn(buttons[i, j], j);
+                    //buttons[i,j].Margin = new Thickness(j*40, i*40, j*10, i*10);
+                    //Panel.Children.Add(buttons[i, j]);
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            (sender as Button).Content = board[Grid.GetRow(sender as Button),Grid.GetColumn(sender as Button)].ToString();
+            //(sender as Button).Content = $"{Grid.GetRow(sender as Button)},{Grid.GetColumn(sender as Button)}";
+            
             if (curPiece != null)
             {
-                board[Grid.GetRow(sender as Button), Grid.GetColumn(sender as Button)] = curPiece;
-                (sender as Button).Content = curPiece.ToString();
+                int prevX = curPiece.x;
+                int prevY = curPiece.y;
+                
+                if (curPiece.Move(Grid.GetRow(sender as Button), Grid.GetColumn(sender as Button)))
+                {
+                    board[Grid.GetRow(sender as Button), Grid.GetColumn(sender as Button)] = curPiece;
+                    (sender as Button).Content = curPiece.ToString();
+                    buttons[prevX, prevY].Content = "";
+                    board[prevX, prevY] = null;
+                    curPiece = null;
+                }
             }
             else 
             {
                 curPiece = board[Grid.GetRow(sender as Button), Grid.GetColumn(sender as Button)];
             }
+            
         }
 
         private void btnPlace_Click(object sender, RoutedEventArgs e)
@@ -58,6 +87,8 @@ namespace ChessWPF1
                 }
             };
             board[piecesData.Data["X"], piecesData.Data["Y"]] = PieceFab.Make(piecesData);
+            buttons[piecesData.Data["X"], piecesData.Data["Y"]].Content = piecesData.Name;
         }
+        
     }
 }

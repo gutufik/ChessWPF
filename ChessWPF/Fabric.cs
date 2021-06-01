@@ -23,13 +23,13 @@ namespace PieceFabric
             return true;
         }
 
-        public bool Move(int x, int y)
+        public bool Move(int newX, int newY)
         {
-            if ((this.x != x || this.y != y)
-                && CanMove(x, y))
+            if ((x != newX || y != newY)
+                && CanMove(newX, newY))
             {
-                this.x = x;
-                this.y = y;
+                x = newX;
+                y = newY;
                 return true;
             }
             return false;
@@ -40,10 +40,14 @@ namespace PieceFabric
     {
         public Knight(int x, int y) : base(x, y) { }
 
-        public override bool CanMove(int x, int y)
+        public override bool CanMove(int newX, int newY)
         {
-            return (Math.Abs(this.x - x) == 2 && Math.Abs(this.y - y) == 1
-                || Math.Abs(this.y - y) == 2 && Math.Abs(this.x - x) == 1);
+            return (Math.Abs(x - newX) == 2 && Math.Abs(y - newY) == 1
+                || Math.Abs(y - newY) == 2 && Math.Abs(x - newX) == 1);
+        }
+        public override string ToString()
+        {
+            return "Knight";
         }
     }
 
@@ -51,10 +55,14 @@ namespace PieceFabric
     {
         public Queen(int x, int y) : base(x, y) { }
 
-        public override bool CanMove(int x, int y)
+        public override bool CanMove(int newX, int newY)
         {
-            return (this.x == x || this.y == y ||
-                Math.Abs(this.x - x) == Math.Abs(this.y - y));
+            return (x == newX || y == newY ||
+                Math.Abs(x - newX) == Math.Abs(y - newY));
+        }
+        public override string ToString()
+        {
+            return "Queen";
         }
     }
 
@@ -62,9 +70,13 @@ namespace PieceFabric
     {
         public Rook(int x, int y) : base(x, y) { }
 
-        public override bool CanMove(int x, int y)
+        public override bool CanMove(int newX, int newY)
         {
-            return (this.x == x || this.y == y);
+            return (x == newX || y == newY);
+        }
+        public override string ToString()
+        {
+            return "Rook";
         }
     }
 
@@ -72,12 +84,12 @@ namespace PieceFabric
     {
         public King(int x, int y) : base(x, y) { }
 
-        public override bool CanMove(int x, int y)
+        public override bool CanMove(int newX, int newY)
         {
-            return (this.x == x && Math.Abs(this.y - y) == 1
-            || this.y == y && Math.Abs(this.x - x) == 1
-            || Math.Abs(this.x - x) == Math.Abs(this.y - y)
-            && Math.Abs(this.y - y) == 1);
+            return (x == newX && Math.Abs(y - newY) == 1
+            || y == newY && Math.Abs(x - newX) == 1
+            || Math.Abs(x - newX) == Math.Abs(y - newY)
+            && Math.Abs(y - newY) == 1);
         }
         public override string ToString()
         {
@@ -89,9 +101,13 @@ namespace PieceFabric
     {
         public Bishop(int x, int y) : base(x, y) { }
 
-        public override bool CanMove(int x, int y)
+        public override bool CanMove(int newX, int newY)
         {
-            return (Math.Abs(this.x - x) == Math.Abs(this.y - y));
+            return (Math.Abs(x - newX) == Math.Abs(y - newY));
+        }
+        public override string ToString()
+        {
+            return "Bishop";
         }
     }
 
